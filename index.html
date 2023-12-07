@@ -296,10 +296,79 @@
     </div> -->
     <!--/ Matting. -->
 
+
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Pipeline</h2>
+        <h2 class="title is-3">DFM Pipeline</h2>
+
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Interpolating states</h3> -->
+        <div class="content has-text-justified">
+          <p>
+            Our proposed architecture for training a point-based DFM, which is self-supervised by its mesh-based counterpart. 
+          </strong> G </strong> is a DFM network pre-trained on a collection of meshes. Then we train a DFM network </strong> F </strong> on the
+          corresponding vertex sets.
+          </p>
+        </div>
+        
+        <img src="./static/images/pipeline.png"
+        class="interpolation-image"/>
+        <!-- <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div> -->
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div> -->
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Registration Pipeline</h2>
 
         <!-- Interpolating. -->
         <!-- <h3 class="title is-4">Interpolating states</h3> -->
@@ -308,7 +377,7 @@
             The schematic illustration of our pipeline.  </strong> A </strong> is a pre-trained orientation regressor for
             aligning input shapes. Then a pre-trained feature extractor  </strong> F </strong> embeds them into a high-dimensional
             canonical space. During the iterative optimization procedure of registration, correspondences are
-            dynamically updated according to learned features (Stage-I) and coordinates (Stage-II) of the intermediate shapes. See more details in the text.
+            dynamically updated according to learned features (Stage-I) and coordinates (Stage-II) of the intermediate shapes. See more details in the main paper.
           </p>
         </div>
         
@@ -365,17 +434,18 @@
     <!--/ Animation. -->
 
 
+
     <!-- Concurrent Work. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Results</h2>
-        We evaluate our method and several state-of-the-art techniques for estimating correspondences between deformable shapes on an array of benchmarks.
+        We evaluate our method and existing state-of-the-art techniques for estimating correspondences between deformable shapes on several benchmarks.
         <div class="content has-text-justified">
           <img src="./static/images/table.png"
           class="interpolation-image"/>
 
-        We present the qualitative results of testing the TOPKIDS trained on SCAPE_r. Our method
-        demonstrates robustness in regions of mesh topology with noise, maintaining stable performance.
+          We showcase the qualitative results of our evaluations on TOPKIDS, trained using the SCAPE_r dataset. 
+          Our method reliably exhibits robustness in noisy mesh topology regions, consistently maintaining high performance.
         <div class="content has-text-justified">
           <img src="./static/images/topkids.png"
           class="interpolation-image"/>        
